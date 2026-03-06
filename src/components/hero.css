@@ -1,0 +1,32 @@
+.hero { background: linear-gradient(90deg,#d5e5f0,#e8f0f5); padding: 2rem 0 }
+.hero-inner { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap }
+.hero h2 { margin:0; color:#1a3a52; font-size:1.8rem }
+.hero p { margin:0.4rem 0 0 0; color:#444 }
+.btn { display:inline-block; padding:0.6rem 1rem; border-radius:6px; text-decoration:none }
+.btn.primary { background:#17a2b8; color:#fff }
+
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem 0;
+  }
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

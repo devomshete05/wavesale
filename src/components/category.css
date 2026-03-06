@@ -1,0 +1,37 @@
+.categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.75rem 0;
+}
+.cat-btn {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #d0d7de;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.cat-btn.active {
+  background: #17a2b8;
+  color: white;
+  border-color: #17a2b8;
+}
+
+@media (max-width: 768px) {
+  .cat-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories {
+    gap: 0.3rem;
+  }
+  .cat-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}

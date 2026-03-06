@@ -1,0 +1,51 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e6e6e6;
+  background: linear-gradient(90deg,#f7fafc,#ffffff);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.brand-name {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #1a3a52;
+}
+.brand-sub {
+  font-size: 0.9rem;
+  color: #666;
+}
+.contact a { color: #17a2b8; text-decoration: none }
+.contact { text-align: right; font-size: 0.95rem }
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 1.1rem;
+  }
+  .contact {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 0.5rem 0.75rem;
+  }
+  .brand-name {
+    font-size: 1rem;
+  }
+  .brand-sub {
+    font-size: 0.8rem;
+  }
+  .contact {
+    font-size: 0.75rem;
+  }
+}
