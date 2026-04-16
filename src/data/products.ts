@@ -35,7 +35,7 @@ export const categories = [
     items: [
 
       { id: 'spring loaded', name: '140 * 40 spring loaded', img: ssWashers, description: '', industries: ['Automobile'] },
-      { id: 'spring loaded', name: '110 * 40 spring loaded', img: ssWashers, description: '', industries: ['Automobile'] },
+      { id: 'spring loaded', name: '110 * 40 spring loaded', img: ssWashers,description: '', industries: ['Automobile'] },
       { id: '100 CD Foldable Handle', name: '100 CD Foldable Handle ', img: ssWashers, description: '', industries: ['Automobile'] },
       { id: '76 CD Foldable Handle', name: '76 CD Foldable Handle ', img: ssWashers, description: '', industries: ['Automobile'] },
 

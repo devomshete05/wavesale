@@ -6,13 +6,36 @@ export function EnquiryModal({ product, onClose }: { product: any; onClose: () =
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  function handleSubmit(e: any) {
+  async function handleSubmit(e: any) {
     e.preventDefault()
-    // Mock submit — in a real site you'd send to an API or email service
-    console.log('Enquiry submitted', { product: product?.name, name, email, phone, message })
-    alert('Enquiry submitted (mock). We will contact you soon.')
-    onClose()
+    setLoading(true)
+    try {
+      const response = await fetch('http://localhost:3000/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          product: product?.name,
+          customerName: name,
+          customerEmail: email,
+          customerPhone: phone,
+          message,
+        }),
+      })
+      
+      if (response.ok) {
+        alert('Enquiry submitted! We will contact you soon.')
+        onClose()
+      } else {
+        alert('Failed to submit enquiry. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Error submitting enquiry.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -28,7 +51,9 @@ export function EnquiryModal({ product, onClose }: { product: any; onClose: () =
             <label>Phone<input value={phone} onChange={(e) => setPhone(e.target.value)} /></label>
             <label>Message<textarea value={message} onChange={(e) => setMessage(e.target.value)} /></label>
             <div className="form-actions">
-              <button type="submit" className="btn primary">Send Enquiry</button>
+              <button type="submit" className="btn primary" disabled={loading}>
+                {loading ? 'Sending...' : 'Send Enquiry'}
+              </button>
             </div>
           </form>
         </div>
