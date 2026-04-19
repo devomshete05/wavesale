@@ -51,7 +51,7 @@ export function EnquiryModal({ product, onClose }: { product: any; onClose: () =
             <label>Phone<input value={phone} onChange={(e) => setPhone(e.target.value)} /></label>
             <label>Message<textarea value={message} onChange={(e) => setMessage(e.target.value)} /></label>
             <div className="form-actions">
-              <button type="submit" className="btn primary" disabled={loading}>
+              <button type="submit" className="btn" disabled={loading}>
                 {loading ? 'Sending...' : 'Send Enquiry'}
               </button>
             </div>

@@ -1,23 +1,97 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 60;
+  backdrop-filter: blur(4px);
 }
+
 .modal {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 16px;
   width: min(900px, 95%);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  animation: modalSlideIn 0.3s ease-out;
 }
-.modal-close { float: right; background: transparent; border: none; font-size: 1.1rem; cursor: pointer }
-.modal-body { display: flex; gap: 1rem; align-items: flex-start }
-.modal-img { width: 260px; height: 220px; object-fit: contain }
-.modal-info { flex: 1 }
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-close { 
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent; 
+  border: none; 
+  font-size: 1.5rem; 
+  cursor: pointer;
+  color: var(--muted-text);
+  transition: color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+.modal-body { 
+  display: flex; 
+  gap: 2rem; 
+  align-items: flex-start;
+  position: relative;
+}
+
+.modal-img { 
+  width: 300px; 
+  height: 250px; 
+  object-fit: contain;
+  border-radius: 12px;
+  background: var(--background-color);
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.modal-info { 
+  flex: 1;
+}
+
+.modal-info h3 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.modal-info p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.modal-info strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 @media (max-width: 768px) {
   .modal {

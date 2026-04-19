@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+SMTP_PORT=587.txt
+php.php
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -52,10 +52,31 @@ function App() {
 
       <section id="contact" className="contact-section container">
         <h2>Contact Us</h2>
-        <div className="contact-info">
-          <div><strong>Address:</strong> Pune, Maharashtra</div>
-          <div><strong>Phone:</strong> +91 72761939 , 8805057191</div>
-          <div><strong>Email:</strong>wavesale95@gmail.com</div>
+        <div className="contact-grid">
+          <div className="contact-info">
+            <h3>Get In Touch</h3>
+            <p>Ready to discuss your fastener requirements? Contact us today for personalized service and competitive pricing.</p>
+            <div className="contact-details">
+              <div className="contact-item">
+                <strong>Phone:</strong> <a href="tel:+919876543210">+91 72761939 , 8805057191</a>
+              </div>
+              <div className="contact-item">
+                <strong>Email:</strong> <a href="mailto:info@waveenterprises.example">wavesale95@gmail.com</a>
+              </div>
+              <div className="contact-item">
+                <strong>Location:</strong> Pune, Maharashtra
+              </div>
+            </div>
+          </div>
+          <div className="contact-form">
+            <h3>Send us a Message</h3>
+            <form className="quick-contact-form">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <textarea placeholder="Your Message" rows={4}></textarea>
+              <button type="submit" className="btn">Send Message</button>
+            </form>
+          </div>
         </div>
       </section>
 

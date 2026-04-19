@@ -18,7 +18,7 @@ Dutch Bolts
 Washers — serving the automotive and industrial sectors.</p>
         </div>
         <div className="hero-cta">
-          <a className="btn primary" href="#products">Browse Products</a>
+          <a className="btn" href="#products">Browse Products</a>
         </div>
       </div>
     </section>
